@@ -56,7 +56,7 @@ Client LAN dikonfigurasi dengan IP statis `192.168.10.10/24` dan gateway `192.16
 
 Client WAN dikonfigurasi dengan IP statis `172.16.100.2/24` dan gateway `172.16.100.1`.
 
-![Konfigurasi Client WAN](images/konfigurasi_client_wan.jpeg)
+![Konfigurasi Client WAN](images/Konfigurasi _Client _WAN.jpeg)
 
 ---
 

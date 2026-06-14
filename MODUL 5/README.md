@@ -163,7 +163,10 @@ FortiGate Jakarta dikonfigurasi sebagai edge firewall dan NAT gateway, mengatur 
 
 ![routing-table ospf FortiGate Jakarta](image/routing-table-ospf-fortigate-jakarta.png)
 
----
+9. **[MASIH KURANG]** Screenshot `get system interface physical` untuk membuktikan interface ke Cisco Router, MikroTik Router, dan MikroTik ISP aktif
+
+![interface physical FortiGate Jakarta](image/interface-physical-fortigate-jakarta.png)
+
 
 ## Tugas Modul 6 — Konfigurasi MikroTik ISP
 
@@ -355,11 +358,11 @@ Pengujian dilakukan pada seluruh perangkat untuk memastikan semua konfigurasi be
 
 1. Screenshot konfigurasi Cisco Router Jakarta pada pengujian akhir
 
-![Konfigurasi Router Jakarta](image/Konfigurasi%20Router%20Jakarta.png)
+![Konfigurasi Router Jakarta](image/Konfigurasi%20Router%20Jakart.png)
 
 2. Screenshot konfigurasi MikroTik Router Jakarta pada pengujian akhir
 
-![Konfigurasi MikroTik Router Jakarta](image/Konfigurasi%20MikroTik%20Router%20Jakarta.png)
+![Konfigurasi MikroTik Router Jakarta](image/Konfigurasi%20MikroTik%20Router%20Jakart.png)
 
 3. **[MASIH KURANG]** Screenshot client VLAN 10 Jakarta mendapat IP DHCP dari Ubuntu Server
 

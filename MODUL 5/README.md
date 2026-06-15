@@ -77,165 +77,106 @@ MikroTik Router Jakarta dikonfigurasi dengan VLAN interface untuk VLAN 10, 20, d
 
 Ubuntu Server Jakarta dikonfigurasi dengan IP static pada VLAN 60, menjalankan ISC-DHCP Server untuk melayani VLAN 10 dan VLAN 20, serta menginstall Nginx sebagai web server Jakarta.
 
-**Hasil yang Diharapkan**
-- Ubuntu Server dapat mengakses internet
-- ISC-DHCP Server berjalan dan melayani client VLAN 10 dan VLAN 20
-- Web server Nginx dapat diakses dari jaringan Jakarta dan Surabaya
-
 **Bukti Konfigurasi**
 
 1. Screenshot keseluruhan konfigurasi Ubuntu Server Jakarta
-
 ![Konfigurasi Ubuntu Server Jakarta](image/Konfigurasi%20Ubuntu%20Server%20Jakarta.png)
 
-2. Screenshot `ip a` untuk membuktikan IP static 192.168.60.10/24 terkonfigurasi pada interface eth0. Gambar ini dengan jelas menampilkan eksekusi assignment IP Address dan verifikasi interface `eth0`.
-
+2. Screenshot `ip a` untuk membuktikan IP static 192.168.60.10/24 terkonfigurasi pada interface eth0
 ![ip a Ubuntu Jakarta](image/4.5.jpg)
 
-3. Screenshot `ip route` untuk membuktikan default gateway mengarah ke VRRP virtual IP VLAN 60. Menampilkan tabel routing yang memastikan jalur keluar mengarah ke 192.168.60.1.
-
+3. Screenshot `ip route` untuk membuktikan default gateway mengarah ke VRRP virtual IP VLAN 60
 ![ip route Ubuntu Jakarta](image/4.6.jpg)
 
-4. Screenshot `sudo cat /etc/dhcp/dhcpd.conf` untuk membuktikan DHCP pool VLAN 10 dan VLAN 20 terkonfigurasi. Memperlihatkan definisi subnet untuk VLAN 10, 20, dan 60.
-
+4. Screenshot `sudo cat /etc/dhcp/dhcpd.conf` untuk membuktikan DHCP pool VLAN 10 dan VLAN 20 terkonfigurasi
 ![dhcpd.conf Ubuntu Jakarta](image/4.8.jpg)
 
-5. Screenshot `ping 8.8.8.8` untuk membuktikan Ubuntu Server dapat mengakses internet. Menampilkan proses restart service DHCP dan pengujian ping ke internet.
+5. Screenshot `ping 8.8.8.8` untuk membuktikan Ubuntu Server dapat mengakses internet
+![ping 8.8.8.8 Ubuntu Jakarta](image/4.9.jpg)
 
-![ping 8888 Ubuntu Jakarta](image/4.9.jpg)
-
-6. Screenshot client VLAN 10 mendapat IP DHCP dari Ubuntu Server. VPCS VLAN 10 berhasil mendapat IP 192.168.10.102 dari DHCP Server 192.168.60.10.
-
+6. Screenshot client VLAN 10 mendapat IP DHCP dari Ubuntu Server
 ![DHCP client VLAN 10 Jakarta](image/4.10.png)
 
-7. **[MASIH KURANG]** Screenshot client VLAN 20 mendapat IP DHCP dari Ubuntu Server
+7. Screenshot client VLAN 20 mendapat IP DHCP dari Ubuntu Server
+![DHCP client VLAN 20 Jakarta](image/4.11.png)
 
-![DHCP client VLAN 20 Jakarta](image/dhcp-client-vlan20-jakarta.png)
-
-8. **[MASIH KURANG]** Screenshot tampilan web Nginx diakses dari browser sebagai bukti web server Jakarta aktif
-
-![Nginx dari browser](image/nginx-jakarta-browser.png)
+8. Screenshot tampilan web Nginx diakses dari browser sebagai bukti web server Jakarta aktif
+![Nginx dari browser](image/4.13.jpeg)
 
 ---
 
 ## Tugas Modul 5 — Konfigurasi FortiGate Jakarta
 
-FortiGate Jakarta dikonfigurasi sebagai edge firewall dan NAT gateway, mengatur interface ke Cisco Router, MikroTik Router, dan ISP, menambahkan route internal dan default route, membuat firewall policy untuk akses internet, serta mengkonfigurasi GRE Tunnel dan OSPF over GRE menuju FortiGate Surabaya.
-
-**Hasil yang Diharapkan**
-- FortiGate Jakarta dapat ping MikroTik ISP dan 8.8.8.8
-- Client Jakarta dapat akses internet
-- GRE Tunnel ke Surabaya aktif
-- OSPF neighbor dengan FortiGate Surabaya berstatus Full
-- Route Surabaya muncul di routing table FortiGate Jakarta
-
 **Bukti Konfigurasi**
 
 1. Screenshot konfigurasi FortiGate Jakarta bagian 1 mencakup konfigurasi interface dan routing
-
 ![FortiGate Jakarta part 1](image/FortiGate_Jakarta_part_1.png)
 
 2. Screenshot konfigurasi FortiGate Jakarta bagian 2 mencakup konfigurasi GRE Tunnel dan OSPF
-
 ![FortiGate Jakarta part 2](image/FortiGate_Jakarta_part_2.png)
 
-3. **[MASIH KURANG]** Screenshot `get router info routing-table all` untuk membuktikan routing table FortiGate Jakarta lengkap termasuk route Surabaya
+3. Screenshot `get router info routing-table all` untuk membuktikan routing table FortiGate Jakarta lengkap termasuk route Surabaya
+![routing-table-all FortiGate Jakarta](image/5.3.jpg)
 
-![routing-table-all FortiGate Jakarta](image/routing-table-all-fortigate-jakarta.png)
+4. Screenshot firewall policy untuk membuktikan policy dari jaringan Jakarta ke internet aktif dengan NAT
+![Firewall Policy FortiGate Jakarta](image/5.4.jpeg)
 
-4. **[MASIH KURANG]** Screenshot firewall policy untuk membuktikan policy dari jaringan Jakarta ke internet aktif dengan NAT
+5. Screenshot `ping 8.8.8.8` untuk membuktikan FortiGate Jakarta dapat mengakses internet
+![ping 8.8.8.8 FortiGate Jakarta](image/5.5.jpg)
 
-![Firewall Policy FortiGate Jakarta](image/firewall-policy-fortigate-jakarta.png)
+6. Screenshot ping ke IP tunnel Surabaya (172.16.0.2) untuk membuktikan GRE Tunnel aktif
+![ping tunnel Surabaya FortiGate Jakarta](image/5.6.jpg)
 
-5. **[MASIH KURANG]** Screenshot `ping 8.8.8.8` untuk membuktikan FortiGate Jakarta dapat mengakses internet
+7. Screenshot `get router info ospf neighbor` untuk membuktikan OSPF neighbor dengan FortiGate Surabaya berstatus Full
+![ospf neighbor FortiGate Jakarta](image/5.8.jpg)
 
-![ping 8.8.8.8 FortiGate Jakarta](image/ping-8888-fortigate-jakarta.png)
+8. Screenshot `get router info routing-table ospf` untuk membuktikan route VLAN Surabaya diterima melalui OSPF
+![routing-table ospf FortiGate Jakarta](image/5.7.jpeg)
 
-6. **[MASIH KURANG]** Screenshot ping ke IP tunnel Surabaya (172.16.0.2) untuk membuktikan GRE Tunnel aktif
+9. Screenshot `get system interface physical` untuk membuktikan interface ke Cisco Router, MikroTik Router, dan MikroTik ISP aktif
+![interface physical FortiGate Jakarta](image/5.9.jpg)
 
-![ping tunnel Surabaya FortiGate Jakarta](image/ping-tunnel-surabaya-fortigate-jakarta.png)
-
-7. **[MASIH KURANG]** Screenshot `get router info ospf neighbor` untuk membuktikan OSPF neighbor dengan FortiGate Surabaya berstatus Full
-
-![ospf neighbor FortiGate Jakarta](image/ospf-neighbor-fortigate-jakarta.png)
-
-8. **[MASIH KURANG]** Screenshot `get router info routing-table ospf` untuk membuktikan route VLAN Surabaya diterima melalui OSPF
-
-![routing-table ospf FortiGate Jakarta](image/routing-table-ospf-fortigate-jakarta.png)
-
-9. **[MASIH KURANG]** Screenshot `get system interface physical` untuk membuktikan interface ke Cisco Router, MikroTik Router, dan MikroTik ISP aktif
-
-![interface physical FortiGate Jakarta](image/interface-physical-fortigate-jakarta.png)
-
+---
 
 ## Tugas Modul 6 — Konfigurasi MikroTik ISP
-
-MikroTik ISP dikonfigurasi sebagai simulasi jaringan provider yang menghubungkan FortiGate Jakarta dan FortiGate Surabaya, mengkonfigurasi NAT masquerade agar perangkat lab dapat mengakses internet melalui Cloud NAT PNETLab.
-
-**Hasil yang Diharapkan**
-- MikroTik ISP dapat ping 8.8.8.8
-- FortiGate Jakarta dan FortiGate Surabaya saling reachable melalui ISP
-- ISP tidak menjalankan OSPF enterprise
 
 **Bukti Konfigurasi**
 
 1. Screenshot keseluruhan konfigurasi MikroTik ISP mencakup IP address, route, dan NAT masquerade
-
 ![Konfigurasi MikroTik ISP](image/Konfigurasi%20MikroTik%20ISP.png)
 
-2. **[MASIH KURANG]** Screenshot `ping 8.8.8.8` untuk membuktikan MikroTik ISP dapat mengakses internet
+2. Screenshot `ping 8.8.8.8` untuk membuktikan MikroTik ISP dapat mengakses internet
+![ping 8.8.8.8 MikroTik ISP](image/6.2.png)
 
-![ping 8.8.8.8 MikroTik ISP](image/ping-8888-mikrotik-isp.png)
-
-3. **[MASIH KURANG]** Screenshot ping antar-WAN FortiGate untuk membuktikan FortiGate Jakarta dan Surabaya saling reachable melalui ISP
-
-![ping antar-WAN FortiGate](image/ping-wan-antar-fortigate.png)
+3. Screenshot ping antar-WAN FortiGate untuk membuktikan FortiGate Jakarta dan Surabaya saling reachable melalui ISP
+![ping antar-WAN FortiGate](image/6.3.png)
 
 ---
 
 ## Tugas Modul 7 — Konfigurasi Switch dan MikroTik Surabaya
 
-Cisco Switch Surabaya dikonfigurasi dengan VLAN 30 dan 40 beserta port access ke masing-masing client dan trunk ke MikroTik Surabaya. MikroTik Surabaya dikonfigurasi sebagai gateway VLAN 30 dan 40, menjalankan DHCP Server lokal untuk VLAN 30, serta mengkonfigurasi link dan default route ke FortiGate Surabaya.
-
-**Hasil yang Diharapkan**
-- VLAN 30 dan 40 aktif di Switch Surabaya
-- Client VLAN 30 mendapat IP DHCP dari MikroTik Surabaya
-- Client VLAN 40 menggunakan IP static
-- Client VLAN 30 dapat ping gateway
-- Client VLAN 40 dapat ping gateway
-- Client Surabaya dapat ping 8.8.8.8
-
 **Bukti Konfigurasi**
 
 1. Screenshot keseluruhan konfigurasi Cisco Switch Surabaya mencakup VLAN dan trunk
-
 ![Konfigurasi Cisco Switch Surabaya](image/Konfigurasi%20Cisco%20Switch%20Surabaya.png)
 
 2. Screenshot keseluruhan konfigurasi MikroTik Router Surabaya mencakup IP address, DHCP server, dan routing
-
 ![Konfigurasi MikroTik Router Surabaya](image/Konfigurasi%20MikroTik%20Router%20Surabaya.png)
 
-3. Screenshot client VLAN 30 mendapat IP DHCP dari MikroTik Surabaya. Menampilkan VPCS VLAN 30 melakukan DORA dan mendapat IP 192.168.30.200.
-
+3. Screenshot client VLAN 30 mendapat IP DHCP dari MikroTik Surabaya
 ![DHCP client VLAN 30 Surabaya](image/4.3.jpg)
 
-4. Screenshot ping client VLAN 30 ke gateway (192.168.30.1). Menampilkan uji ping ke 192.168.30.1 yang sukses.
-
+4. Screenshot ping client VLAN 30 ke gateway (192.168.30.1)
 ![ping gateway VLAN 30 Surabaya](image/4.4.jpg)
 
-5. Screenshot client VLAN 40 menggunakan IP static. Menampilkan konfigurasi IP 192.168.40.10 dan proses save.
-
+5. Screenshot client VLAN 40 menggunakan IP static
 ![IP static client VLAN 40 Surabaya](image/4.1.jpg)
 
-6. Screenshot ping client VLAN 40 ke gateway (192.168.40.1). Gambar ini memuat bukti ping ke gateway (192.168.40.1) pada baris atas.
-
+6. Screenshot ping client VLAN 40 ke gateway (192.168.40.1)
 ![ping gateway VLAN 40 Surabaya](image/4.2.jpg)
 
-7. Screenshot ping client Surabaya ke 8.8.8.8 untuk membuktikan akses internet. Gambar yang sama juga memuat bukti ping ke 8.8.8.8 pada baris bawah.
-
+7. Screenshot ping client Surabaya ke 8.8.8.8 untuk membuktikan akses internet
 ![ping 8.8.8.8 client Surabaya](image/4.2.jpg)
-
----
 
 ## Tugas Modul 8 — Konfigurasi FortiGate Surabaya
 

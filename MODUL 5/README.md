@@ -88,25 +88,25 @@ Ubuntu Server Jakarta dikonfigurasi dengan IP static pada VLAN 60, menjalankan I
 
 ![Konfigurasi Ubuntu Server Jakarta](image/Konfigurasi%20Ubuntu%20Server%20Jakarta.png)
 
-2. **[MASIH KURANG]** Screenshot `ip a` untuk membuktikan IP static 192.168.60.10/24 terkonfigurasi pada interface eth0
+2. Screenshot `ip a` untuk membuktikan IP static 192.168.60.10/24 terkonfigurasi pada interface eth0. Gambar ini dengan jelas menampilkan eksekusi assignment IP Address dan verifikasi interface `eth0`.
 
-![ip a Ubuntu Jakarta](image/ip-a-ubuntu-jakarta.png)
+![ip a Ubuntu Jakarta](image/4.5.jpg)
 
-3. **[MASIH KURANG]** Screenshot `ip route` untuk membuktikan default gateway mengarah ke VRRP virtual IP VLAN 60
+3. Screenshot `ip route` untuk membuktikan default gateway mengarah ke VRRP virtual IP VLAN 60. Menampilkan tabel routing yang memastikan jalur keluar mengarah ke 192.168.60.1.
 
-![ip route Ubuntu Jakarta](image/ip-route-ubuntu-jakarta.png)
+![ip route Ubuntu Jakarta](image/4.6.jpg)
 
-4. **[MASIH KURANG]** Screenshot `sudo cat /etc/dhcp/dhcpd.conf` untuk membuktikan DHCP pool VLAN 10 dan VLAN 20 terkonfigurasi
+4. Screenshot `sudo cat /etc/dhcp/dhcpd.conf` untuk membuktikan DHCP pool VLAN 10 dan VLAN 20 terkonfigurasi. Memperlihatkan definisi subnet untuk VLAN 10, 20, dan 60.
 
-![dhcpd.conf Ubuntu Jakarta](image/dhcpd-conf-ubuntu-jakarta.png)
+![dhcpd.conf Ubuntu Jakarta](image/4.8.jpg)
 
-5. **[MASIH KURANG]** Screenshot `ping 8.8.8.8` untuk membuktikan Ubuntu Server dapat mengakses internet
+5. Screenshot `ping 8.8.8.8` untuk membuktikan Ubuntu Server dapat mengakses internet. Menampilkan proses restart service DHCP dan pengujian ping ke internet.
 
-![ping 8.8.8.8 Ubuntu Jakarta](image/ping-8888-ubuntu-jakarta.png)
+![ping 8888 Ubuntu Jakarta](image/4.9.jpg)
 
-6. **[MASIH KURANG]** Screenshot client VLAN 10 mendapat IP DHCP dari Ubuntu Server
+6. Screenshot client VLAN 10 mendapat IP DHCP dari Ubuntu Server. VPCS VLAN 10 berhasil mendapat IP 192.168.10.102 dari DHCP Server 192.168.60.10.
 
-![DHCP client VLAN 10 Jakarta](image/dhcp-client-vlan10-jakarta.png)
+![DHCP client VLAN 10 Jakarta](image/4.10.png)
 
 7. **[MASIH KURANG]** Screenshot client VLAN 20 mendapat IP DHCP dari Ubuntu Server
 
@@ -215,25 +215,25 @@ Cisco Switch Surabaya dikonfigurasi dengan VLAN 30 dan 40 beserta port access ke
 
 ![Konfigurasi MikroTik Router Surabaya](image/Konfigurasi%20MikroTik%20Router%20Surabaya.png)
 
-3. **[MASIH KURANG]** Screenshot client VLAN 30 mendapat IP DHCP dari MikroTik Surabaya
+3. Screenshot client VLAN 30 mendapat IP DHCP dari MikroTik Surabaya. Menampilkan VPCS VLAN 30 melakukan DORA dan mendapat IP 192.168.30.200.
 
-![DHCP client VLAN 30 Surabaya](image/dhcp-client-vlan30-surabaya.png)
+![DHCP client VLAN 30 Surabaya](image/4.3.jpg)
 
-4. **[MASIH KURANG]** Screenshot ping client VLAN 30 ke gateway (192.168.30.1)
+4. Screenshot ping client VLAN 30 ke gateway (192.168.30.1). Menampilkan uji ping ke 192.168.30.1 yang sukses.
 
-![ping gateway VLAN 30 Surabaya](image/ping-gateway-vlan30-surabaya.png)
+![ping gateway VLAN 30 Surabaya](image/4.4.jpg)
 
-5. **[MASIH KURANG]** Screenshot client VLAN 40 menggunakan IP static
+5. Screenshot client VLAN 40 menggunakan IP static. Menampilkan konfigurasi IP 192.168.40.10 dan proses save.
 
-![IP static client VLAN 40 Surabaya](image/ip-static-vlan40-surabaya.png)
+![IP static client VLAN 40 Surabaya](image/4.1.jpg)
 
-6. **[MASIH KURANG]** Screenshot ping client VLAN 40 ke gateway (192.168.40.1)
+6. Screenshot ping client VLAN 40 ke gateway (192.168.40.1). Gambar ini memuat bukti ping ke gateway (192.168.40.1) pada baris atas.
 
-![ping gateway VLAN 40 Surabaya](image/ping-gateway-vlan40-surabaya.png)
+![ping gateway VLAN 40 Surabaya](image/4.2.jpg)
 
-7. **[MASIH KURANG]** Screenshot ping client Surabaya ke 8.8.8.8 untuk membuktikan akses internet
+7. Screenshot ping client Surabaya ke 8.8.8.8 untuk membuktikan akses internet. Gambar yang sama juga memuat bukti ping ke 8.8.8.8 pada baris bawah.
 
-![ping 8.8.8.8 client Surabaya](image/ping-8888-client-surabaya.png)
+![ping 8.8.8.8 client Surabaya](image/4.2.jpg)
 
 ---
 

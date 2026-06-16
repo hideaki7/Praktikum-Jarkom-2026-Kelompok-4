@@ -199,7 +199,7 @@ FortiGate Surabaya dikonfigurasi sebagai edge firewall dan GRE endpoint sisi Sur
 
 ![FortiGate Surabaya part 2](image/FortiGate_Surabaya_part_2.png)
 
-3. **[MASIH KURANG]** Screenshot `get system interface physical` untuk membuktikan interface ke ISP dan MikroTik Surabaya aktif
+3. Screenshot `get system interface physical` untuk membuktikan interface ke ISP dan MikroTik Surabaya aktif
 
 ![interface physical FortiGate Surabaya](image/interface-physical-fortigate-surabaya.png)
 

@@ -203,23 +203,23 @@ FortiGate Surabaya dikonfigurasi sebagai edge firewall dan GRE endpoint sisi Sur
 
 ![interface physical FortiGate Surabaya](image/interface-physical-fortigate-surabaya.png)
 
-4. **[MASIH KURANG]** Screenshot firewall policy untuk membuktikan policy dari jaringan Surabaya ke internet aktif dengan NAT
+4. Screenshot firewall policy untuk membuktikan policy dari jaringan Surabaya ke internet aktif dengan NAT
 
 ![Firewall Policy FortiGate Surabaya](image/firewall-policy-fortigate-surabaya.png)
 
-5. **[MASIH KURANG]** Screenshot `ping 8.8.8.8` untuk membuktikan FortiGate Surabaya dapat mengakses internet
+5. Screenshot `ping 8.8.8.8` untuk membuktikan FortiGate Surabaya dapat mengakses internet
 
 ![ping 8.8.8.8 FortiGate Surabaya](image/ping-8888-fortigate-surabaya.png)
 
-6. **[MASIH KURANG]** Screenshot ping ke IP tunnel Jakarta (172.16.0.1) untuk membuktikan GRE Tunnel aktif
+6. Screenshot ping ke IP tunnel Jakarta (172.16.0.1) untuk membuktikan GRE Tunnel aktif
 
 ![ping tunnel Jakarta FortiGate Surabaya](image/ping-tunnel-jakarta-fortigate-surabaya.png)
 
-7. **[MASIH KURANG]** Screenshot `get router info ospf neighbor` untuk membuktikan OSPF neighbor dengan FortiGate Jakarta berstatus Full
+7. Screenshot `get router info ospf neighbor` untuk membuktikan OSPF neighbor dengan FortiGate Jakarta berstatus Full
 
 ![ospf neighbor FortiGate Surabaya](image/ospf-neighbor-fortigate-surabaya.png)
 
-8. **[MASIH KURANG]** Screenshot `get router info routing-table ospf` untuk membuktikan route VLAN Jakarta diterima melalui OSPF
+8. Screenshot `get router info routing-table ospf` untuk membuktikan route VLAN Jakarta diterima melalui OSPF
 
 ![routing-table ospf FortiGate Surabaya](image/routing-table-ospf-fortigate-surabaya.png)
 
@@ -261,25 +261,17 @@ GRE Tunnel dikonfigurasi antara FortiGate Jakarta dan FortiGate Surabaya sebagai
 
 ![Implementasi GRE Tunnel FortiGate Surabaya part 3](image/Implementasi%20GRE%20Tunnel%20%26%20OSPF%20over%20GRE%20Eksekusi%20pada%20FortiGate%20Surabaya%20part%203.png)
 
-7. **[MASIH KURANG]** Screenshot ping WAN antar-FortiGate untuk membuktikan IP WAN kedua FortiGate saling reachable
+7. Screenshot ping WAN antar-FortiGate untuk membuktikan IP WAN kedua FortiGate saling reachable
 
 ![ping WAN antar-FortiGate](image/ping-wan-antar-fortigate-modul9.png)
 
-8. **[MASIH KURANG]** Screenshot `get router info ospf neighbor` dari FortiGate Jakarta untuk membuktikan OSPF neighbor berstatus Full
+8. Screenshot `get router info ospf neighbor` dari FortiGate Jakarta untuk membuktikan OSPF neighbor berstatus Full
 
 ![ospf neighbor FortiGate Jakarta modul9](image/ospf-neighbor-fortigate-jakarta-modul9.png)
 
-9. **[MASIH KURANG]** Screenshot `get router info routing-table ospf` dari FortiGate Jakarta untuk membuktikan route VLAN Surabaya diterima
+9. Screenshot `get router info routing-table ospf` dari FortiGate Jakarta untuk membuktikan route VLAN Surabaya diterima
 
 ![routing-table ospf FortiGate Jakarta modul9](image/routing-table-ospf-fortigate-jakarta-modul9.png)
-
-10. **[MASIH KURANG]** Screenshot ping client Jakarta ke client Surabaya untuk membuktikan komunikasi antar-site berhasil
-
-![ping client Jakarta ke Surabaya](image/ping-client-jakarta-ke-surabaya.png)
-
-11. **[MASIH KURANG]** Screenshot ping client Surabaya ke client Jakarta untuk membuktikan komunikasi antar-site berhasil
-
-![ping client Surabaya ke Jakarta](image/ping-client-surabaya-ke-jakarta.png)
 
 ---
 
@@ -299,29 +291,29 @@ Pengujian dilakukan pada seluruh perangkat untuk memastikan semua konfigurasi be
 
 1. Screenshot konfigurasi Cisco Router Jakarta pada pengujian akhir
 
-![Konfigurasi Router Jakarta](image/Konfigurasi%20Router%20Jakart.png)
+![Konfigurasi Router Jakarta](image/10.png)
 
 2. Screenshot konfigurasi MikroTik Router Jakarta pada pengujian akhir
 
-![Konfigurasi MikroTik Router Jakarta](image/Konfigurasi%20MikroTik%20Router%20Jakart.png)
+![Konfigurasi MikroTik Router Jakarta](image/20.png)
 
-3. **[MASIH KURANG]** Screenshot client VLAN 10 Jakarta mendapat IP DHCP dari Ubuntu Server
+3. Screenshot client VLAN 10 Jakarta mendapat IP DHCP dari Ubuntu Server
 
 ![DHCP client VLAN 10 Jakarta final](image/dhcp-client-vlan10-jakarta-final.png)
 
-4. **[MASIH KURANG]** Screenshot client VLAN 30 Surabaya mendapat IP DHCP dari MikroTik Surabaya
+4. Screenshot client VLAN 30 Surabaya mendapat IP DHCP dari MikroTik Surabaya
 
 ![DHCP client VLAN 30 Surabaya final](image/dhcp-client-vlan30-surabaya-final.png)
 
-5. **[MASIH KURANG]** Screenshot ping internet dari client Jakarta
+5. Screenshot ping internet dari client Jakarta
 
 ![ping internet Jakarta final](image/ping-internet-jakarta-final.png)
 
-6. **[MASIH KURANG]** Screenshot ping internet dari client Surabaya
+6. Screenshot ping internet dari client Surabaya
 
 ![ping internet Surabaya final](image/ping-internet-surabaya-final.png)
 
-7. **[MASIH KURANG]** Screenshot ping antar-site (client Jakarta ke client Surabaya atau sebaliknya)
+7. Screenshot ping antar-site (client Jakarta ke client Surabaya atau sebaliknya)
 
 ![ping antar-site final](image/ping-antar-site-final.png)
 

@@ -13,7 +13,7 @@ Cisco Switch Jakarta dikonfigurasi untuk membuat VLAN 10, 20, dan 60, mengatur p
 
 1. Topologi jaringan sisi Jakarta
 
-![Topologi Jakarta](image/.png)
+![Topologi Jakarta](image/1.png)
 
 2. Screenshot `show vlan brief` untuk membuktikan VLAN 10, 20, dan 60 berhasil dibuat
 
